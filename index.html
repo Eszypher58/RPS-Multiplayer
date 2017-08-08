@@ -21,6 +21,9 @@
 
  		<link rel="stylesheet" href="assets/css/style.css">
 
+ 		<!-- Firebase Reference -->
+    	<script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
+
 	</head>
 
 	<body>
@@ -37,23 +40,127 @@
 
 			</div>
 
+			<div id="promptrow" class="row">
+				
+				<div class="col s12 m12">
+					
+					<p id="prompt" class="center-align"></p>
+
+				</div>
+
+			</div>
+				
+			<div id="addPlayerRow" class="form">
+			
+				<div class="row flow-text center-align">
+
+					<div class="col s12 m12">
+
+						Add Player:
+
+						<div class="input-field inline">
+
+							<input id="name" type="text">
+
+							<label id="helperLabel" for="name" data-error="wrong" data-success="right">Input Name</label>
+	
+						</div>
+
+						<a id="addPlayer" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">send</i></a>
+
+					</div>
+		
+				</div>
+
+			</div>
+
 			<div class="row">
 				
 				<div id="p1" class="col s3 m3">
 					
-					<h2 class="center-align">Player 1</h1>
+					<div class="card blue darken-2">
+						
+						<div class="card-content white-text center-align">
+							
+							<span class="card-title">Player 1</span>
+
+							<p id="p1name"></p>
+
+							<hr>
+							
+							<div id="p1selection" class="p1content">
+								
+								<p id="1r" class="p1choice">Rock</p>
+								<p id="1p" class="p1choice">Paper</p>
+								<p id="1s" class="p1choice">Scissor</p>
+
+							</div>
+
+							<hr class="p1content">
+							
+							<div id="p1winloss">
+								
+								<p>Win: <span id="p1win"></span></p>
+
+								<p>Loss: <span id="p1loss"></span></p>
+
+							</div>
+
+						</div>
+
+					</div>					
 
 				</div>
 
-				<div id="result" class="col s6 m6">
+				<div id="resultrow" class="col s6 m6">
 					
-					<h2 class="center-align">Result</h1>
+					<div class="card green darken-4">
+						
+						<div class="card-content white-text">
+							
+							<span class="card-title center-align">Results</span>
+
+							<h1 id="result" class="center-align"></h1>
+
+						</div>
+
+					</div>
 
 				</div>
 
 				<div id="p2" class="col s3 m3">
 					
-					<h2 class="center-align">Player 2</h1>
+					<div class="card red darken-3">
+						
+						<div class="card-content white-text center-align">
+							
+							<span class="card-title">Player 2</span>
+
+							<p id="p2name"></p>
+
+							<hr>
+							
+							<div id="p2selection" class="p2content">
+											
+								<p id="2r" class="p2choice">Rock</p>
+								<p id="2p" class="p2choice">Paper</p>
+								<p id="2s" class="p2choice">Scissor</p>
+
+							</div>
+
+							<hr class="p2content">
+							
+							<div id="p2winloss">
+								
+								<p>Win: <span id="p2win"></span></p>
+
+								<p>Loss: <span id="p2loss"></span></p>
+
+							</div>
+
+						</div>
+
+					</div>
 
 				</div>
 
@@ -63,7 +170,11 @@
 				
 				<div id="p1" class="col s10 m10 offset-s1 offset-m1">
 					
-					<h2 class="center-align">Chart Box</h1>
+					<h2 class="center-align">Message</h2>
+					
+					<div id="message"></div>
+
+					<!-- need an input here with a submit button when user click submit it sends the message to firebase-->
 
 				</div>
 
